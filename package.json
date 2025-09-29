@@ -1,0 +1,28 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "A simple todo backend",
+  "keywords": [
+    "todo",
+    "rushikeshghodke"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github.com/rushikeshghodkedottech/todo-backend"
+  },
+  "license": "MIT",
+  "author": "rushikeshghodke",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.18.2",
+    "mongoose-sequence": "^6.0.1"
+  }
+}
