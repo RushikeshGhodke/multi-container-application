@@ -1,0 +1,24 @@
+# Node.js specific
+node_modules
+npm-debug.log
+yarn-debug.log
+.npm
+
+# Build artifacts
+dist/
+build/
+coverage/
+
+# Development specific
+.env
+.git
+.gitignore
+.vscode/
+.idea/
+*.log
+*.swp
+tmp/
+
+# Docker specific
+Dockerfile
+.dockerignore
