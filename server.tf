@@ -44,7 +44,7 @@ resource "aws_security_group" "multi-container-app-sg" {
 
 # EC2 instance
 resource "aws_instance" "multi-container-app-ec2" {
-  ami           = "ami-0360c520857e3138f" 
+  ami           = "ami-0bc691261a82b32bc" 
   instance_type = "t2.micro"
   key_name      = "tf-multi-container" 
 

@@ -1,4 +1,4 @@
-# version: '3.8'
+version: "3.8"
 
 services:
   mongodb:
@@ -10,6 +10,7 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: rushi
       MONGO_INITDB_ROOT_PASSWORD: rushi
+      MONGO_INITDB_DATABASE: tododb
     volumes:
       - mongo_data:/data/db
 
@@ -21,7 +22,7 @@ services:
       - "3000:3000"
     environment:
       - PORT=3000
-      - MONGO_URI=mongodb://rushi:rushi@mongodb:27017/
+      - MONGO_URI=mongodb://rushi:rushi@mongodb:27017/tododb?authSource=admin
     depends_on:
       - mongodb
 
