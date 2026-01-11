@@ -44,9 +44,9 @@ resource "aws_security_group" "multi-container-app-sg" {
 
 # EC2 instance
 resource "aws_instance" "multi-container-app-ec2" {
-  ami           = "ami-0bc691261a82b32bc" 
+  ami           = "ami-0bc691261a82b32bc"
   instance_type = "t2.micro"
-  key_name      = "tf-multi-container" 
+  key_name      = "tf-multi-container"
 
   vpc_security_group_ids = [aws_security_group.multi-container-app-sg.id]
 
@@ -59,4 +59,20 @@ resource "aws_instance" "multi-container-app-ec2" {
 output "ec2_public_ip" {
   description = "Public IP of the EC2 instance"
   value       = aws_instance.multi-container-app-ec2.public_ip
+}
+
+resource "tls_private_key" "ssh_key" {
+  algorithm = "RSA"
+  rsa_bits  = 4096
+}
+
+resource "aws_key_pair" "generated_key" {
+  key_name   = "tf-multi-container"
+  public_key = tls_private_key.ssh_key.public_key_openssh
+}
+
+resource "local_file" "private_key" {
+  content         = tls_private_key.ssh_key.private_key_pem
+  filename        = "${path.module}/tf-multi-container.pem"
+  file_permission = "0400"
 }
