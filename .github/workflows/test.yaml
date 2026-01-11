@@ -1,0 +1,12 @@
+name: Test Workflow
+run-name: Test Workflow run by ${{ github.actor }}
+
+on: 
+  - workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello
+        run: echo "Hello"
