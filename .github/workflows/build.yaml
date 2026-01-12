@@ -1,13 +1,6 @@
 name: Build and Push Docker Image
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'backend/**'
-      - 'docker-compose.yaml'
-      - '.github/workflows/build.yaml'
   workflow_dispatch:
 
 jobs:
