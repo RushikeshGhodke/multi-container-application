@@ -204,3 +204,9 @@ docker-compose down
 cd terraform
 terraform destroy
 ```
+
+---
+
+## 🔗 Project Reference
+
+This project is based on the [Multi-Container Service](https://roadmap.sh/projects/multi-container-service) challenge from roadmap.sh
