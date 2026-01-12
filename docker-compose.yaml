@@ -15,7 +15,7 @@ services:
       - mongo_data:/data/db
 
   backend:
-    build: ./backend
+    image: rushikeshghodke/multi-container-application:latest
     container_name: backend
     restart: always
     ports:
